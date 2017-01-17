@@ -27,7 +27,12 @@
             </div>
         </div>
         <div class="chat-room-list">
-            <div class="room-label" ng-repeat="room in homepage.rooms.all">{{room.$value}}</div>
+            <div class="room-label" ng-repeat="room in homepage.rooms.all" ng-click="homepage.activeRoomMessages = homepage.messages.getByRoomId(room.$id)">{{room.$value}}</div>
+        </div>
+    </section>
+    <section class="message-window">
+        <div>
+            {{homepage.activeRoomMessages}}
         </div>
     </section>
 </main>
