@@ -31,8 +31,14 @@
         </div>
     </section>
     <section class="message-window">
-        <div>
-            {{homepage.activeRoomMessages}}
+        <div ng-repeat="message in homepage.activeRoomMessages" class="message-box">
+            <div class="message-attr">
+                <div class="message-username">{{message.username}}</div>
+                <div class="message-sentAt">{{message.sentAt}}</div>
+            </div>
+            <div class="messsage-content">
+                {{message.content}}
+            </div>
         </div>
     </section>
 </main>
