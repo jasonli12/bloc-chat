@@ -9,8 +9,6 @@
         
         this.messages = Message;
         
-//        this.activeRoomId = 'Starting Point';
-        
         this.activeRoomMessages = '';
     }
     
