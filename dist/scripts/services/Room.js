@@ -6,7 +6,8 @@
         
         var addRoom = function(roomName) {
             rooms.$add(roomName);
-            $('#newChatroomModal').modal('hide')
+            $('#newChatroomModal').modal('hide');
+            console.log(rooms);
         };
         
         
