@@ -1,4 +1,17 @@
 <main>
+    <div class="modal fade" id="usernameModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form ng-submit="homepage.setUsername(newUsername)">
+                    <label for="username">Enter Username</label>
+                    <input type="text" ng-model="newUsername" id="username">
+                    <button type="submit">Set username</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
     <section class="navbar">
         <h2 class="app-name">Bloc-Chat</h2>
         <!-- Button trigger modal -->
@@ -19,7 +32,7 @@
                             <label for="chatroom-name">Enter Room Name</label>
                             <input type="text" ng-model="newRoomName" id="chatroom-name">
                             <!-- ng-model creates a property called newRoomName in the controller's scope. newRoomName is accessible throughout the controller and the view because the view has access to the controller -->
-                            
+
                             <button type="submit">Create!</button>
                         </form>
                     </div>
