@@ -11,6 +11,8 @@
 
         this.activeRoomMessages = '';
 
+        this.activeRoomId = '';
+
         this.cookies = BlocChatCookies;
 
         this.setUsername = function(newUsername) {
@@ -20,7 +22,23 @@
         this.currentUser = this.cookies.currentUser;
         this.resetUsernameCookies = this.cookies.resetCookies;
         // this.resetUsernameCookies('blocChatCurrentUser');
-        console.log(this.currentUser);
+        // console.log(this.currentUser);
+
+        this.sendMessage = function(newMessage) {
+            var newMessageObject = {};
+            var messageDateTime = new Date;
+
+            newMessageObject.sentAt = messageDateTime.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            newMessageObject.roomId = this.activeRoomId;
+            newMessageObject.content = newMessage;
+            newMessageObject.username =this.currentUser;
+            // console.log(newMessageObject);
+
+            Message.send(newMessageObject);
+            $('#newMessage').val('');
+            // console.log($('#newMessage').val());
+        };
+
 
     }
 
