@@ -47,7 +47,7 @@
         <div ng-repeat="message in homepage.activeRoomMessages" class="message-box">
             <div class="message-attr">
                 <div class="message-username">{{message.username}}</div>
-                <div class="message-sentAt">{{message.sentAt}}</div>
+                <div class="message-sentAt">{{message.sentAt | date: 'h:mm a'}}</div>
             </div>
             <div class="messsage-content">
                 {{message.content}}

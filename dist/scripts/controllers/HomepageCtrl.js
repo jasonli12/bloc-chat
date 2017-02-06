@@ -16,16 +16,14 @@
         this.cookies = BlocChatCookies;
 
         // this.cookies.resetCookies('blocChatCurrentUser');
-        console.log(this.cookies.currentUser);
+        console.log(this.cookies.currentUser());
 
         this.sendMessage = function(newMessage) {
             var newMessageObject = {};
-            var messageDateTime = new Date;
 
-            newMessageObject.sentAt = messageDateTime.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
             newMessageObject.roomId = this.activeRoomId;
             newMessageObject.content = newMessage;
-            newMessageObject.username =this.cookies.currentUser;
+            newMessageObject.username =this.cookies.currentUser();
             // console.log(newMessageObject);
 
             Message.send(newMessageObject);

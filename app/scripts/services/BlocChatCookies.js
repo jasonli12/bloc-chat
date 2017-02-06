@@ -24,10 +24,12 @@
         function resetCookies(key) {
             $cookies.remove(key);
         }
-
+        function getCurrentUser() {
+          return $cookies.get('blocChatCurrentUser');
+        }
         return {
             setUsername: setUsername,
-            currentUser: currentUser,
+            currentUser: getCurrentUser,
             resetCookies: resetCookies
         };
     }
